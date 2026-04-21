@@ -4,7 +4,7 @@ This webpage contains complementary material to the research paper:
 <div class="highlight-box">
 <table><tr>
 <td width="140"><img src="icon-research.svg" width="120" height="120" alt="Research icon"></td>
-<td><b>A multi-horizon ensemble-based framework for dynamic variable importance analysis in air temperature forecasting.</b></td>
+<td><h2>A multi-horizon ensemble-based framework for dynamic variable importance analysis in air temperature forecasting.</h2></td>
 </tr></table>
 </div>
 
