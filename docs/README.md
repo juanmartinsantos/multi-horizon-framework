@@ -38,7 +38,7 @@ From these base datasets, a total of **172 variables** are constructed for each 
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp; · **4 calendar variables** — day, month, year and day-of-year.
 
-This results in **620 supervised time series** (20 regions × 31 forecast horizons), each evaluated using XGBoost with 1,000 iterations.
+This results in **620 supervised time series** (20 regions × 31 forecast horizons), each evaluated using XGBoost.
 
 <center>
 <a href="#img2"><img src="map.png" width="600"></a>
