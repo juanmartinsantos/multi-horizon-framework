@@ -1,9 +1,4 @@
 
-To cite this paper:
-<a href="#img1"><img src="bannercolor.jpg" width="850" height="10"></a> <br>
-J. Martín and J. A. Sáez, **A multi-horizon ensemble-based framework for dynamic variable importance analysis in air temperature forecasting**, *Earth System Science Data* (under review), 2026.
-<a href="#img1"><img src="bannercolor.jpg" width="850" height="10"></a>
-
  <br>
 
 This webpage contains complementary material to the research paper:
