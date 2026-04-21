@@ -1,9 +1,11 @@
 
 This webpage contains complementary material to the research paper:
 
-<div class="highlight-box" style="display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;gap:1.5rem;">
-  <img src="icon-research.svg" width="120" height="120" style="flex-shrink:0;" alt="Research icon">
-  <span style="flex:1;font-size:1.5rem;">A multi-horizon ensemble-based framework for dynamic variable importance analysis in air temperature forecasting.</span>
+<div class="highlight-box">
+<table><tr>
+<td width="140"><img src="icon-research.svg" width="120" height="120" alt="Research icon"></td>
+<td><b>A multi-horizon ensemble-based framework for dynamic variable importance analysis in air temperature forecasting.</b></td>
+</tr></table>
 </div>
 
 <br>

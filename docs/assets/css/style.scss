@@ -35,11 +35,6 @@
 
 /* ── Paper title card ── */
 .highlight-box {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  align-items: center !important;
-  gap: 1.5rem;
   padding: 1.5rem 1.5rem;
   padding-top: calc(1.5rem + 4px);
   padding-bottom: calc(1.5rem + 4px);
@@ -70,19 +65,23 @@
   bottom: 0;
 }
 
-.highlight-box img {
-  border-radius: 4px;
-  flex-shrink: 0;
-  width: 120px;
-  height: 120px;
+.highlight-box table {
+  border: none !important;
+  background: transparent !important;
+  margin: 0 !important;
 }
 
-.highlight-box span {
-  margin: 0;
-  font-size: 1.05rem;
-  font-weight: 500;
+.highlight-box td {
+  border: none !important;
+  vertical-align: middle !important;
+  padding: 0.5rem !important;
+  background: transparent !important;
+}
+
+.highlight-box td b {
+  font-size: 1.3rem;
   color: #24292f;
-  flex: 1;
+}
 }
 
 /* ── Abstract blockquote ── */
