@@ -1,1 +1,4 @@
 theme: jekyll-theme-cayman
+title: Multi-Horizon Framework
+description: A multi-horizon ensemble-based framework for dynamic variable importance analysis in air temperature forecasting
+show_downloads: false
