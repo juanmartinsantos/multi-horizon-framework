@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#155799"/>
+      <stop offset="100%" style="stop-color:#159957"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#155799"/>
+      <stop offset="100%" style="stop-color:#159957"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="56" fill="#f0f4f8" stroke="url(#grad)" stroke-width="2.5"/>
+  <!-- Grid lines (subtle) -->
+  <line x1="28" y1="42" x2="92" y2="42" stroke="#dce3eb" stroke-width="0.8"/>
+  <line x1="28" y1="56" x2="92" y2="56" stroke="#dce3eb" stroke-width="0.8"/>
+  <line x1="28" y1="70" x2="92" y2="70" stroke="#dce3eb" stroke-width="0.8"/>
+  <!-- Axis -->
+  <line x1="28" y1="30" x2="28" y2="84" stroke="#8a9bb0" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="28" y1="84" x2="96" y2="84" stroke="#8a9bb0" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Time series line (main) -->
+  <polyline points="32,68 42,62 50,70 58,48 66,52 74,38 82,44 90,36"
+    fill="none" stroke="url(#grad2)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Data points -->
+  <circle cx="32" cy="68" r="2.5" fill="#155799"/>
+  <circle cx="42" cy="62" r="2.5" fill="#155799"/>
+  <circle cx="50" cy="70" r="2.5" fill="#156a6e"/>
+  <circle cx="58" cy="48" r="2.5" fill="#158a5e"/>
+  <circle cx="66" cy="52" r="2.5" fill="#159957"/>
+  <circle cx="74" cy="38" r="2.5" fill="#159957"/>
+  <circle cx="82" cy="44" r="2.5" fill="#159957"/>
+  <circle cx="90" cy="36" r="2.5" fill="#159957"/>
+  <!-- Forecast dashed extension -->
+  <line x1="90" y1="36" x2="96" y2="32" stroke="#159957" stroke-width="2" stroke-dasharray="3,2" stroke-linecap="round" opacity="0.5"/>
+  <!-- Magnifying glass -->
+  <circle cx="78" cy="66" r="12" fill="none" stroke="#155799" stroke-width="2" opacity="0.35"/>
+  <line x1="86.5" y1="74.5" x2="94" y2="82" stroke="#155799" stroke-width="2.5" stroke-linecap="round" opacity="0.35"/>
+  <!-- Thermometer (small, bottom-left) -->
+  <rect x="34" y="88" width="4" height="16" rx="2" fill="none" stroke="url(#grad)" stroke-width="1.2"/>
+  <circle cx="36" cy="102" r="3.5" fill="none" stroke="url(#grad)" stroke-width="1.2"/>
+  <rect x="35.2" y="93" width="1.6" height="7" rx="0.8" fill="#e05050"/>
+  <circle cx="36" cy="102" r="2" fill="#e05050"/>
+</svg>
