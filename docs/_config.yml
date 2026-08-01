@@ -1,0 +1,4 @@
+theme: jekyll-theme-cayman
+title: Multi-Horizon Variable Importance
+description: A knowledge-extraction framework for multi-horizon variable importance analysis in air temperature forecasting
+show_downloads: false
