@@ -1,10 +1,10 @@
 
-This webpage contains complementary material to the research paper:
+This webpage contains supplementary material for the research paper:
 
 <div class="highlight-box">
 <table><tr>
 <td width="140"><img src="icon-research.svg" width="120" height="120" alt="Research icon"></td>
-<td><h2>A multi-horizon ensemble-based framework for dynamic variable importance analysis in air temperature forecasting.</h2></td>
+<td>Martín, J., &amp; Sáez, J. A. (2026). A knowledge-extraction framework for multi-horizon variable importance analysis in air temperature forecasting <em>[Manuscript submitted to Expert Systems with Applications]</em>.</td>
 </tr></table>
 </div>
 
@@ -14,51 +14,68 @@ This webpage contains complementary material to the research paper:
 
 1. [Abstract](#abstract)
 2. [Real-world datasets](#datasets)
-3. [Variable importance results](#results)
+3. [Importance results](#results)
 
 ---
 
-## 1. Abstract 
+<a id="abstract"></a>
 
-> Forecasting air temperature is crucial for addressing a wide range of environmental challenges, including agricultural yield optimization, water resource management and climate change mitigation. However, existing approaches often overlook the fact that the importance of individual variables can vary substantially across forecasting horizons. This research proposes a novel knowledge-extraction framework for systematically analyzing variable importance in daily average air temperature forecasting across multiple temporal horizons. By leveraging the internal gain information of ensemble-based models, such as gradient boosting trees, this approach extends their proven forecasting capabilities to explore how the relevance of predictive variables shifts as forecasting horizons increase. The proposed methodology is applied to long-term temperature data from 20 different regions in Spain, which are used to define a set of 172 variables, including recent temperatures, historical patterns and calendar-based features. Using these variables, 620 supervised time series datasets are generated incorporating different temporal horizons and the significance of each variable is analyzed through robust statistical validation. The results reveal how the importance of these variables varies across forecasting horizons, providing valuable insights into temperature dynamics and demonstrating the broader applicability of the proposed framework. This finding has implications that extend well beyond temperature prediction, contributing to the field of explainable AI by offering a transferable analytical perspective for any domain where multi-horizon forecasting is required.
+## 1. Abstract
+
+> Forecasting air temperature is crucial for addressing a wide range of environmental challenges. In this context, understanding the relevance of predictive variables is essential for enhancing model accuracy. However, existing approaches often overlook the fact that feature importance can vary substantially with lead time. Characterizing this evolution is key to capturing temperature dynamics and improving prediction reliability. To address this limitation, a knowledge-extraction framework that leverages gain information from gradient boosting trees is proposed to analyze changes in variable importance. The methodology is applied to long-term temperature data from 20 regions in Spain, from which 172 variables are derived, including recent temperatures, historical patterns and calendar-based features. These are used to generate 620 supervised datasets covering multiple time horizons and the resulting relevance profiles are evaluated through robust statistical analyses. The results reveal clear shifts in variable influence, showing that the factors driving accurate predictions evolve as lead time increases. These findings extend beyond temperature estimation and contribute to explainable AI by providing a transferable analytical methodology for other multi-horizon problems.
 
 ---
 
-## 2. Real-world datasets 
+<a id="datasets"></a>
 
-This research considers daily climatic data from 20 meteorological stations across different regions in Spain. The data are gathered from the **AEMET** (Agencia Estatal de Meteorología), covering the period of **2008–2023** (16 years). Each dataset contains daily recordings of average temperature (*t*), minimum temperature (*tmin*) and maximum temperature (*tmax*).
+## 2. Real-world datasets
 
-From these base datasets, a total of **172 variables** are constructed for each forecasting horizon:
-
-- **93 recent variables** — lagged values of *t*, *tmin* and *tmax* (1 to 31 days back).
-- **75 historical variables** — 5-year historical aggregates with multiple lookback windows.
-- **4 calendar variables** — day, month, year and day-of-year.
-
-This results in **620 supervised time series** (20 regions × 31 forecast horizons), each evaluated using XGBoost.
+This research considers daily temperature records collected from 20 locations across Spain over the period 2008–2023. These regions span diverse climate regimes, ranging from semi-arid to Mediterranean conditions. The map below shows the geographical distribution of the study locations.
 
 <div class="map-container">
-  <img src="map.png" alt="Map of 20 meteorological stations across Spain">
+  <img src="map.png" alt="Map of the 20 meteorological stations across Spain">
 </div>
 
-The original datasets can be obtained from the AEMET open data portal: [https://opendata.aemet.es/](https://opendata.aemet.es/)
+The datasets were obtained from **AEMET**, the Spanish national meteorological agency. Each dataset consists of six variables: daily average temperature (*t*), minimum temperature (*tmin*), maximum temperature (*tmax*) and the calendar features *year*, *month* and *day*. The table below summarizes the main characteristics of the datasets, including the mean and standard deviation of the temperature measurements.
 
-Additionally, the processed gain importance results for all 20 stations can be downloaded [here](https://github.com/juanmartinsantos/multi-horizon-framework/raw/main/docs/datasets.zip).
+| Data | *t* | *tmin* | *tmax* | Data | *t* | *tmin* | *tmax* |
+|---|---|---|---|---|---|---|---|
+| `alb` | 15.97 ± 7.71 | 9.55 ± 6.91 | 22.38 ± 8.98 | `ler` | 15.93 ± 7.85 | 9.55 ± 7.05 | 22.30 ± 9.04 |
+| `alm` | 19.51 ± 5.57 | 15.38 ± 5.57 | 23.63 ± 5.80 | `lug` | 12.68 ± 5.44 | 7.10 ± 5.18 | 18.26 ± 6.71 |
+| `ast` | 13.14 ± 5.10 | 9.03 ± 4.84 | 17.25 ± 5.75 | `mur` | 18.62 ± 6.64 | 12.09 ± 6.22 | 25.16 ± 7.58 |
+| `bad` | 17.62 ± 6.94 | 10.48 ± 5.98 | 24.77 ± 8.59 | `nav` | 13.58 ± 6.88 | 7.65 ± 5.83 | 19.52 ± 8.57 |
+| `bur` | 12.27 ± 7.26 | 5.07 ± 6.21 | 19.46 ± 9.11 | `sal` | 12.62 ± 6.96 | 5.18 ± 5.90 | 20.06 ± 8.74 |
+| `cac` | 16.86 ± 7.31 | 11.06 ± 6.28 | 22.67 ± 8.72 | `sev` | 19.78 ± 6.77 | 13.49 ± 5.94 | 26.06 ± 8.03 |
+| `gua` | 11.29 ± 7.15 | 3.66 ± 6.52 | 18.91 ± 8.79 | `ter` | 12.70 ± 7.41 | 5.43 ± 6.67 | 19.97 ± 8.87 |
+| `hue` | 18.79 ± 5.83 | 12.85 ± 5.41 | 24.73 ± 6.72 | `tol` | 16.69 ± 7.98 | 10.27 ± 7.13 | 23.10 ± 9.24 |
+| `jae` | 17.81 ± 7.59 | 12.83 ± 6.54 | 22.78 ± 8.83 | `val` | 18.92 ± 5.62 | 14.58 ± 5.96 | 23.26 ± 5.64 |
+| `lac` | 15.34 ± 3.88 | 12.23 ± 3.74 | 18.44 ± 4.34 | `zar` | 16.45 ± 7.53 | 10.85 ± 6.53 | 22.06 ± 8.84 |
+
+The original datasets can be accessed through the AEMET Open Data portal: [https://opendata.aemet.es/](https://opendata.aemet.es/)
+
+Additionally, the preprocessed datasets used in the experiments can be downloaded [here](https://github.com/juanmartinsantos/multi-horizon-framework/raw/main/docs/input_series.zip). They contain the 20 daily series after imputing the missing values, so every station has the same length (5844 days) and every supervised dataset derived from them has the same size (4002 instances).
 
 ---
 
-## 3. Variable importance results 
+<a id="results"></a>
+
+## 3. Importance results
 
 <ul class="download-list">
   <li>
-    <span>Importance by variable type (Recent / Historical / Calendar)</span>
+    <span>Importance of variables by region</span>
+    <a href="https://github.com/juanmartinsantos/multi-horizon-framework/raw/main/docs/datasets.zip"><img src="icon-excel.png" width="40" alt="Download"></a>
+  </li>
+  <li>
+    <span>Importance of variable types</span>
     <a href="https://github.com/juanmartinsantos/multi-horizon-framework/raw/main/docs/importance_by_type.xlsx"><img src="icon-excel.png" width="40" alt="Download Excel"></a>
   </li>
   <li>
-    <span>Importance by variable subtype (temperature, year, day interval, day, month, yearday)</span>
+    <span>Importance of variable subtypes</span>
     <a href="https://github.com/juanmartinsantos/multi-horizon-framework/raw/main/docs/importance_by_subtype.xlsx"><img src="icon-excel.png" width="40" alt="Download Excel"></a>
   </li>
   <li>
-    <span>Gain importance across all 31 forecasting horizons (averaged over 20 regions)</span>
+    <span>Importance of individual variables</span>
     <a href="https://github.com/juanmartinsantos/multi-horizon-framework/raw/main/docs/gain_all_horizons.xlsx"><img src="icon-excel.png" width="40" alt="Download Excel"></a>
   </li>
 </ul>
